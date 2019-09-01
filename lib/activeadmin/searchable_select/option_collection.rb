@@ -8,6 +8,7 @@ module ActiveAdmin
         @display_text = extract_display_text_option(options)
         @filter = extract_filter_option(options)
         @per_page = options.fetch(:per_page, 10)
+        @options = options
       end
 
       def scope(template, params)
