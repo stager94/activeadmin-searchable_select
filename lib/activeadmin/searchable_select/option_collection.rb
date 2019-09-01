@@ -36,7 +36,7 @@ module ActiveAdmin
 
         results = records.map do |record|
           {
-            id: record.id,
+            id: record.send(params[:id_column] || :id),
             text: display_text(record)
           }
         end
