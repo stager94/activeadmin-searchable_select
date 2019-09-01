@@ -34,10 +34,10 @@ module ActiveAdmin
 
       def as_json(template, params)
         records, more = fetch_records(template, params)
-        binding.pry
+
         results = records.map do |record|
           {
-            id: record.send(params[:id_column] || :id),
+            id: record.send(@options[:id_column] || :id),
             text: display_text(record)
           }
         end
